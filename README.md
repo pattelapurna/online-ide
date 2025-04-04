@@ -24,7 +24,7 @@ A **Next.js-based Online Code Compiler** that executes code securely in Docker c
 ```sh
 git clone https://github.com/purnapattela/code-compiler.git
 cd code-compiler
-npm install
+npm install --legacy-peer-deps
 ```
 
 ### **2. Build Docker Runners**

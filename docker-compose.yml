@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  python-runner:
+    build:
+      context: .
+      dockerfile: Docker/python-runner/Dockerfile
+    container_name: python-runner
+    volumes:
+      - ./Docker/python-runner:/app
+    working_dir: /app
+    command: ["python", "run.py"]
+
+  javascript-runner:
+    build:
+      context: .
+      dockerfile: Docker/javascript-runner/Dockerfile
+    container_name: javascript-runner
+    volumes:
+      - ./Docker/javascript-runner:/app
+    working_dir: /app
+    command: ["node", "run.mjs"]
+
+  java-runner:
+    build:
+      context: .
+      dockerfile: Docker/java-runner/Dockerfile
+    container_name: java-runner
+    volumes:
+      - ./Docker/java-runner:/app
+    working_dir: /app
+    command: ["/bin/sh", "run.sh"]
